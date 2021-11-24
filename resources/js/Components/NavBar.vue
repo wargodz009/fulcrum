@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div>
+		<div class="main">
 			<ul>
 				<li>
 					<span><img src="/images/view.png" alt=""></span>
@@ -42,6 +42,9 @@ export default {
 </script>
 
 <style scoped>
+.main {
+	background: rgba(255, 255, 255, 0.85);
+}
 ul {
 	display: flex;
 	align-content: center;
