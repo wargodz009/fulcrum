@@ -14,4 +14,7 @@ class User extends Model
         'email'   => ['required','email'],
         'password'   => 'required'
     ];
+    public function bids() {
+        return $this->hasMany(Bid::class);
+    }
 }
