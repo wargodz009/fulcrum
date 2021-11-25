@@ -9,12 +9,13 @@ class Property extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $with = ['bids'];
     public static $validationRules = [
         'address'   => 'required',
         'win_bid'   => 'required',
         'last_bid_diff'   => 'required',
     ];
     public function bids() {
-        return $this->hasMany(Bid::class);
+        return $this->hasMany(Bid::class)->with('user');
     }
 }

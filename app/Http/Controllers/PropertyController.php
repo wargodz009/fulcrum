@@ -20,7 +20,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        return response()->json(Property::paginate(1));
+        return response()->json(Property::with('bids')->paginate(1));
     }
 
 
