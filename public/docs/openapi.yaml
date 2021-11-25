@@ -1,0 +1,1823 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://fulcrum.test'
+paths:
+  /api/amount:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 1
+                      price: 100
+                      status: 0
+                      bid_id: 1
+                      created_at: '2021-11-25T20:55:54.000000Z'
+                      updated_at: '2021-11-25T21:19:35.000000Z'
+                  first_page_url: 'http://fulcrum.test/api/amount?page=1'
+                  from: 1
+                  last_page: 2
+                  last_page_url: 'http://fulcrum.test/api/amount?page=2'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://fulcrum.test/api/amount?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: 'http://fulcrum.test/api/amount?page=2'
+                      label: '2'
+                      active: false
+                    -
+                      url: 'http://fulcrum.test/api/amount?page=2'
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: 'http://fulcrum.test/api/amount?page=2'
+                  path: 'http://fulcrum.test/api/amount'
+                  per_page: 1
+                  prev_page_url: null
+                  to: 1
+                  total: 2
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        price: 100
+                        status: 0
+                        bid_id: 1
+                        created_at: '2021-11-25T20:55:54.000000Z'
+                        updated_at: '2021-11-25T21:19:35.000000Z'
+                    items:
+                      type: object
+                  first_page_url:
+                    type: string
+                    example: 'http://fulcrum.test/api/amount?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 2
+                  last_page_url:
+                    type: string
+                    example: 'http://fulcrum.test/api/amount?page=2'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://fulcrum.test/api/amount?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://fulcrum.test/api/amount?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://fulcrum.test/api/amount?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                  next_page_url:
+                    type: string
+                    example: 'http://fulcrum.test/api/amount?page=2'
+                  path:
+                    type: string
+                    example: 'http://fulcrum.test/api/amount'
+                  per_page:
+                    type: integer
+                    example: 1
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 1
+                  total:
+                    type: integer
+                    example: 2
+      tags:
+        - 'BidAmount management'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'BidAmount management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                price:
+                  type: string
+                  description: 'The amount of the bid.'
+                  example: '100'
+                status:
+                  type: integer
+                  description: 'The status of the bid.'
+                  example: 0
+                bid_id:
+                  type: integer
+                  description: 'the id of the bid.'
+                  example: 1
+              required:
+                - price
+      security: []
+  '/api/amount/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  price: 100
+                  status: 0
+                  bid_id: 1
+                  created_at: '2021-11-25T20:55:54.000000Z'
+                  updated_at: '2021-11-25T21:19:35.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  price:
+                    type: integer
+                    example: 100
+                  status:
+                    type: integer
+                    example: 0
+                  bid_id:
+                    type: integer
+                    example: 1
+                  created_at:
+                    type: string
+                    example: '2021-11-25T20:55:54.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2021-11-25T21:19:35.000000Z'
+      tags:
+        - 'BidAmount management'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'BidAmount management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                price:
+                  type: string
+                  description: 'The amount of the bid.'
+                  example: '100'
+                status:
+                  type: integer
+                  description: 'The status of the bid.'
+                  example: 0
+                bid_id:
+                  type: integer
+                  description: 'the id of the bid.'
+                  example: 1
+              required:
+                - price
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'BidAmount management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the amount.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/bid:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 1
+                      property_id: 2
+                      status: 1
+                      created_at: '2021-11-25T21:21:59.000000Z'
+                      updated_at: '2021-11-25T21:22:22.000000Z'
+                  first_page_url: 'http://fulcrum.test/api/bid?page=1'
+                  from: 1
+                  last_page: 2
+                  last_page_url: 'http://fulcrum.test/api/bid?page=2'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://fulcrum.test/api/bid?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: 'http://fulcrum.test/api/bid?page=2'
+                      label: '2'
+                      active: false
+                    -
+                      url: 'http://fulcrum.test/api/bid?page=2'
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: 'http://fulcrum.test/api/bid?page=2'
+                  path: 'http://fulcrum.test/api/bid'
+                  per_page: 1
+                  prev_page_url: null
+                  to: 1
+                  total: 2
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        property_id: 2
+                        status: 1
+                        created_at: '2021-11-25T21:21:59.000000Z'
+                        updated_at: '2021-11-25T21:22:22.000000Z'
+                    items:
+                      type: object
+                  first_page_url:
+                    type: string
+                    example: 'http://fulcrum.test/api/bid?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 2
+                  last_page_url:
+                    type: string
+                    example: 'http://fulcrum.test/api/bid?page=2'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://fulcrum.test/api/bid?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://fulcrum.test/api/bid?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://fulcrum.test/api/bid?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                  next_page_url:
+                    type: string
+                    example: 'http://fulcrum.test/api/bid?page=2'
+                  path:
+                    type: string
+                    example: 'http://fulcrum.test/api/bid'
+                  per_page:
+                    type: integer
+                    example: 1
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 1
+                  total:
+                    type: integer
+                    example: 2
+      tags:
+        - 'Bid management'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Bid management'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: integer
+                  description: 'The status of the property.'
+                  example: 0
+                property_id:
+                  type: integer
+                  description: 'the id of the property.'
+                  example: 1
+      security: []
+  '/api/bid/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  property_id: 2
+                  status: 1
+                  created_at: '2021-11-25T21:21:59.000000Z'
+                  updated_at: '2021-11-25T21:22:22.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  property_id:
+                    type: integer
+                    example: 2
+                  status:
+                    type: integer
+                    example: 1
+                  created_at:
+                    type: string
+                    example: '2021-11-25T21:21:59.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2021-11-25T21:22:22.000000Z'
+      tags:
+        - 'Bid management'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Bid management'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: integer
+                  description: 'The status of the property.'
+                  example: 0
+                property_id:
+                  type: integer
+                  description: 'the id of the property.'
+                  example: 1
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Bid management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the bid.'
+        example: 8
+        required: true
+        schema:
+          type: integer
+  /api/property:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 1
+                      address: '0'
+                      win_bid: '11'
+                      last_bid_diff: '1'
+                      created_at: '2021-11-25T21:24:59.000000Z'
+                      updated_at: '2021-11-25T21:24:59.000000Z'
+                  first_page_url: 'http://fulcrum.test/api/property?page=1'
+                  from: 1
+                  last_page: 1
+                  last_page_url: 'http://fulcrum.test/api/property?page=1'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://fulcrum.test/api/property?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: null
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: null
+                  path: 'http://fulcrum.test/api/property'
+                  per_page: 1
+                  prev_page_url: null
+                  to: 1
+                  total: 1
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        address: '0'
+                        win_bid: '11'
+                        last_bid_diff: '1'
+                        created_at: '2021-11-25T21:24:59.000000Z'
+                        updated_at: '2021-11-25T21:24:59.000000Z'
+                    items:
+                      type: object
+                  first_page_url:
+                    type: string
+                    example: 'http://fulcrum.test/api/property?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 1
+                  last_page_url:
+                    type: string
+                    example: 'http://fulcrum.test/api/property?page=1'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://fulcrum.test/api/property?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                  next_page_url:
+                    type: string
+                    example: null
+                  path:
+                    type: string
+                    example: 'http://fulcrum.test/api/property'
+                  per_page:
+                    type: integer
+                    example: 1
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 1
+                  total:
+                    type: integer
+                    example: 1
+      tags:
+        - 'Property management'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Property management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: string
+                  description: 'The address of the property.'
+                  example: 'sample street'
+                win_bid:
+                  type: integer
+                  description: 'the id of the winning bid.'
+                  example: 1
+                last_bid_diff:
+                  type: integer
+                  description: 'the diff between last bid.'
+                  example: 1
+              required:
+                - address
+      security: []
+  '/api/property/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  address: '0'
+                  win_bid: '11'
+                  last_bid_diff: '1'
+                  created_at: '2021-11-25T21:24:59.000000Z'
+                  updated_at: '2021-11-25T21:24:59.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  address:
+                    type: string
+                    example: '0'
+                  win_bid:
+                    type: string
+                    example: '11'
+                  last_bid_diff:
+                    type: string
+                    example: '1'
+                  created_at:
+                    type: string
+                    example: '2021-11-25T21:24:59.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2021-11-25T21:24:59.000000Z'
+      tags:
+        - 'Property management'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Property management'
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Property management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the property.'
+        example: 3
+        required: true
+        schema:
+          type: integer
+  /api/user:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data: []
+                  first_page_url: 'http://fulcrum.test/api/user?page=1'
+                  from: null
+                  last_page: 1
+                  last_page_url: 'http://fulcrum.test/api/user?page=1'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://fulcrum.test/api/user?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: null
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: null
+                  path: 'http://fulcrum.test/api/user'
+                  per_page: 1
+                  prev_page_url: null
+                  to: null
+                  total: 0
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example: []
+                  first_page_url:
+                    type: string
+                    example: 'http://fulcrum.test/api/user?page=1'
+                  from:
+                    type: string
+                    example: null
+                  last_page:
+                    type: integer
+                    example: 1
+                  last_page_url:
+                    type: string
+                    example: 'http://fulcrum.test/api/user?page=1'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://fulcrum.test/api/user?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                  next_page_url:
+                    type: string
+                    example: null
+                  path:
+                    type: string
+                    example: 'http://fulcrum.test/api/user'
+                  per_page:
+                    type: integer
+                    example: 1
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: string
+                    example: null
+                  total:
+                    type: integer
+                    example: 0
+      tags:
+        - 'User management'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User management'
+      security: []
+  '/api/user/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'No query results for model [App\Models\User] 1'
+                  exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+                  file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
+                  line: 385
+                  trace:
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
+                      line: 332
+                      function: prepareException
+                      class: Illuminate\Foundation\Exceptions\Handler
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php
+                      line: 54
+                      function: render
+                      class: Illuminate\Foundation\Exceptions\Handler
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php
+                      line: 51
+                      function: render
+                      class: NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 172
+                      function: handleException
+                      class: Illuminate\Routing\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 127
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 103
+                      function: handleRequest
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                      line: 55
+                      function: handleRequestUsingNamedLimiter
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 167
+                      function: handle
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 103
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 697
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 672
+                      function: runRouteWithinStack
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 636
+                      function: runRoute
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 625
+                      function: dispatchToRoute
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                      line: 167
+                      function: dispatch
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 128
+                      function: 'Illuminate\Foundation\Http\{closure}'
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                      line: 21
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php
+                      line: 31
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 167
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                      line: 21
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php
+                      line: 40
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 167
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TrimStrings
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php
+                      line: 27
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 167
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php
+                      line: 86
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 167
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/fruitcake/laravel-cors/src/HandleCors.php
+                      line: 52
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 167
+                      function: handle
+                      class: Fruitcake\Cors\HandleCors
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
+                      line: 39
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 167
+                      function: handle
+                      class: Illuminate\Http\Middleware\TrustProxies
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 103
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                      line: 142
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                      line: 111
+                      function: sendRequestThroughRouter
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 299
+                      function: handle
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 287
+                      function: callLaravelOrLumenRoute
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 89
+                      function: makeApiCall
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 45
+                      function: makeResponseCall
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 35
+                      function: makeResponseCallIfConditionsPass
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                      line: 222
+                      function: __invoke
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                      line: 179
+                      function: iterateThroughStrategies
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                      line: 116
+                      function: fetchResponses
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                      line: 117
+                      function: processRoute
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                      line: 75
+                      function: extractEndpointsInfoFromLaravelApp
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                      line: 51
+                      function: extractEndpointsInfoAndWriteToDisk
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php
+                      line: 48
+                      function: get
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                      line: 36
+                      function: handle
+                      class: Knuckles\Scribe\Commands\GenerateDocumentation
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Container/Util.php
+                      line: 40
+                      function: 'Illuminate\Container\{closure}'
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                      line: 93
+                      function: unwrapIfClosure
+                      class: Illuminate\Container\Util
+                      type: '::'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                      line: 37
+                      function: callBoundMethod
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Container/Container.php
+                      line: 653
+                      function: call
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                      line: 136
+                      function: call
+                      class: Illuminate\Container\Container
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/symfony/console/Command/Command.php
+                      line: 299
+                      function: execute
+                      class: Illuminate\Console\Command
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                      line: 121
+                      function: run
+                      class: Symfony\Component\Console\Command\Command
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/symfony/console/Application.php
+                      line: 978
+                      function: run
+                      class: Illuminate\Console\Command
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/symfony/console/Application.php
+                      line: 295
+                      function: doRunCommand
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/symfony/console/Application.php
+                      line: 167
+                      function: doRun
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Console/Application.php
+                      line: 94
+                      function: run
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
+                      line: 129
+                      function: run
+                      class: Illuminate\Console\Application
+                      type: '->'
+                    -
+                      file: /Users/player1/study/fulcrum/artisan
+                      line: 37
+                      function: handle
+                      class: Illuminate\Foundation\Console\Kernel
+                      type: '->'
+                properties:
+                  message:
+                    type: string
+                    example: 'No query results for model [App\Models\User] 1'
+                  exception:
+                    type: string
+                    example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+                  file:
+                    type: string
+                    example: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
+                  line:
+                    type: integer
+                    example: 385
+                  trace:
+                    type: array
+                    example:
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
+                        line: 332
+                        function: prepareException
+                        class: Illuminate\Foundation\Exceptions\Handler
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php
+                        line: 54
+                        function: render
+                        class: Illuminate\Foundation\Exceptions\Handler
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php
+                        line: 51
+                        function: render
+                        class: NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 172
+                        function: handleException
+                        class: Illuminate\Routing\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 127
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 103
+                        function: handleRequest
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+                        line: 55
+                        function: handleRequestUsingNamedLimiter
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 167
+                        function: handle
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 103
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 697
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 672
+                        function: runRouteWithinStack
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 636
+                        function: runRoute
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 625
+                        function: dispatchToRoute
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                        line: 167
+                        function: dispatch
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 128
+                        function: 'Illuminate\Foundation\Http\{closure}'
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                        line: 21
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php
+                        line: 31
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 167
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                        line: 21
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php
+                        line: 40
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 167
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TrimStrings
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php
+                        line: 27
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 167
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php
+                        line: 86
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 167
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/fruitcake/laravel-cors/src/HandleCors.php
+                        line: 52
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 167
+                        function: handle
+                        class: Fruitcake\Cors\HandleCors
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
+                        line: 39
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 167
+                        function: handle
+                        class: Illuminate\Http\Middleware\TrustProxies
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 103
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                        line: 142
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                        line: 111
+                        function: sendRequestThroughRouter
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 299
+                        function: handle
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 287
+                        function: callLaravelOrLumenRoute
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 89
+                        function: makeApiCall
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 45
+                        function: makeResponseCall
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 35
+                        function: makeResponseCallIfConditionsPass
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                        line: 222
+                        function: __invoke
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                        line: 179
+                        function: iterateThroughStrategies
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                        line: 116
+                        function: fetchResponses
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                        line: 117
+                        function: processRoute
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                        line: 75
+                        function: extractEndpointsInfoFromLaravelApp
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                        line: 51
+                        function: extractEndpointsInfoAndWriteToDisk
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php
+                        line: 48
+                        function: get
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                        line: 36
+                        function: handle
+                        class: Knuckles\Scribe\Commands\GenerateDocumentation
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Container/Util.php
+                        line: 40
+                        function: 'Illuminate\Container\{closure}'
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                        line: 93
+                        function: unwrapIfClosure
+                        class: Illuminate\Container\Util
+                        type: '::'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                        line: 37
+                        function: callBoundMethod
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Container/Container.php
+                        line: 653
+                        function: call
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                        line: 136
+                        function: call
+                        class: Illuminate\Container\Container
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/symfony/console/Command/Command.php
+                        line: 299
+                        function: execute
+                        class: Illuminate\Console\Command
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                        line: 121
+                        function: run
+                        class: Symfony\Component\Console\Command\Command
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/symfony/console/Application.php
+                        line: 978
+                        function: run
+                        class: Illuminate\Console\Command
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/symfony/console/Application.php
+                        line: 295
+                        function: doRunCommand
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/symfony/console/Application.php
+                        line: 167
+                        function: doRun
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Console/Application.php
+                        line: 94
+                        function: run
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
+                        line: 129
+                        function: run
+                        class: Illuminate\Console\Application
+                        type: '->'
+                      -
+                        file: /Users/player1/study/fulcrum/artisan
+                        line: 37
+                        function: handle
+                        class: Illuminate\Foundation\Console\Kernel
+                        type: '->'
+                    items:
+                      type: object
+      tags:
+        - 'User management'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User management'
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 11
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: 'BidAmount management'
+    description: "\nAPIs for managing Bid Amount"
+  -
+    name: 'Bid management'
+    description: "\nAPIs for managing Bids"
+  -
+    name: 'Property management'
+    description: "\nAPIs for managing Properties"
+  -
+    name: 'User management'
+    description: "\nAPIs for managing Users"

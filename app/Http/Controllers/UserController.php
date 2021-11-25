@@ -6,6 +6,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @group User management
+ *
+ * APIs for managing Users
+ */
 class UserController extends Controller
 {
     /**

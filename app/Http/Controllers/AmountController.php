@@ -6,6 +6,12 @@ use App\Models\Amount;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+
+/**
+ * @group BidAmount management
+ *
+ * APIs for managing Bid Amount
+ */
 class AmountController extends Controller
 {
     /**
@@ -22,6 +28,9 @@ class AmountController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @bodyParam price string required The amount of the bid. Example: 100
+     * @bodyParam status integer The status of the bid. Example: 0
+     * @bodyParam bid_id integer the id of the bid. Example: 1
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
@@ -52,6 +61,9 @@ class AmountController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Amount  $amount
+     * @bodyParam price string required The amount of the bid. Example: 100
+     * @bodyParam status integer The status of the bid. Example: 0
+     * @bodyParam bid_id integer the id of the bid. Example: 1
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, Amount $amount)

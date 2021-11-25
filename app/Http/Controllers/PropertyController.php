@@ -6,6 +6,11 @@ use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @group Property management
+ *
+ * APIs for managing Properties
+ */
 class PropertyController extends Controller
 {
     /**
@@ -23,6 +28,9 @@ class PropertyController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @bodyParam address string required The address of the property. Example: sample street
+     * @bodyParam win_bid integer the id of the winning bid. Example: 1
+     * @bodyParam last_bid_diff integer the diff between last bid. Example: 1
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)

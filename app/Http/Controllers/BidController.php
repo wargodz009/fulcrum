@@ -6,6 +6,11 @@ use App\Models\Bid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @group Bid management
+ *
+ * APIs for managing Bids
+ */
 class BidController extends Controller
 {
     /**
@@ -22,6 +27,8 @@ class BidController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @bodyParam status integer The status of the property. Example: 0
+     * @bodyParam property_id integer the id of the property. Example: 1
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
@@ -52,6 +59,8 @@ class BidController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Bid  $bid
+     * @bodyParam status integer The status of the property. Example: 0
+     * @bodyParam property_id integer the id of the property. Example: 1
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, Bid $bid)
