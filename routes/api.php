@@ -1,6 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\AmountController;
+use App\Http\Controllers\BidController;
+use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('/property',\App\Http\Controllers\PropertyController::class);
+Route::apiResource('/property', PropertyController::class);
+Route::apiResource('/user', UserController::class);
+Route::apiResource('/bid', BidController::class);
+Route::apiResource('/amount', AmountController::class);
