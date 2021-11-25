@@ -510,7 +510,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 1
+        example: 19
         type: integer
     queryParameters: []
     bodyParameters: []
@@ -532,7 +532,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 20
+        example: 16
         type: integer
     queryParameters: []
     bodyParameters: []

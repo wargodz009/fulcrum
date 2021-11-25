@@ -14,4 +14,7 @@ class Property extends Model
         'win_bid'   => 'required',
         'last_bid_diff'   => 'required',
     ];
+    public function bids() {
+        return $this->hasMany(Bid::class);
+    }
 }

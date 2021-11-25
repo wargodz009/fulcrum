@@ -308,7 +308,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the amount.'
-        example: 16
+        example: 10
         required: true
         schema:
           type: integer
@@ -343,10 +343,17 @@ paths:
                   data:
                     -
                       id: 1
-                      property_id: 2
+                      property_id: 1
                       status: 1
                       created_at: '2021-11-25T21:21:59.000000Z'
                       updated_at: '2021-11-25T21:22:22.000000Z'
+                      amount:
+                        id: 1
+                        price: 100
+                        status: 0
+                        bid_id: 1
+                        created_at: '2021-11-25T20:55:54.000000Z'
+                        updated_at: '2021-11-25T21:19:35.000000Z'
                   first_page_url: 'http://fulcrum.test/api/bid?page=1'
                   from: 1
                   last_page: 2
@@ -383,10 +390,17 @@ paths:
                     example:
                       -
                         id: 1
-                        property_id: 2
+                        property_id: 1
                         status: 1
                         created_at: '2021-11-25T21:21:59.000000Z'
                         updated_at: '2021-11-25T21:22:22.000000Z'
+                        amount:
+                          id: 1
+                          price: 100
+                          status: 0
+                          bid_id: 1
+                          created_at: '2021-11-25T20:55:54.000000Z'
+                          updated_at: '2021-11-25T21:19:35.000000Z'
                     items:
                       type: object
                   first_page_url:
@@ -508,17 +522,24 @@ paths:
                 type: object
                 example:
                   id: 1
-                  property_id: 2
+                  property_id: 1
                   status: 1
                   created_at: '2021-11-25T21:21:59.000000Z'
                   updated_at: '2021-11-25T21:22:22.000000Z'
+                  amount:
+                    id: 1
+                    price: 100
+                    status: 0
+                    bid_id: 1
+                    created_at: '2021-11-25T20:55:54.000000Z'
+                    updated_at: '2021-11-25T21:19:35.000000Z'
                 properties:
                   id:
                     type: integer
                     example: 1
                   property_id:
                     type: integer
-                    example: 2
+                    example: 1
                   status:
                     type: integer
                     example: 1
@@ -528,6 +549,15 @@ paths:
                   updated_at:
                     type: string
                     example: '2021-11-25T21:22:22.000000Z'
+                  amount:
+                    type: object
+                    example:
+                      id: 1
+                      price: 100
+                      status: 0
+                      bid_id: 1
+                      created_at: '2021-11-25T20:55:54.000000Z'
+                      updated_at: '2021-11-25T21:19:35.000000Z'
       tags:
         - 'Bid management'
       security: []
@@ -595,7 +625,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the bid.'
-        example: 8
+        example: 15
         required: true
         schema:
           type: integer
@@ -630,7 +660,7 @@ paths:
                   data:
                     -
                       id: 1
-                      address: '0'
+                      address: dasdsa
                       win_bid: '11'
                       last_bid_diff: '1'
                       created_at: '2021-11-25T21:24:59.000000Z'
@@ -667,7 +697,7 @@ paths:
                     example:
                       -
                         id: 1
-                        address: '0'
+                        address: dasdsa
                         win_bid: '11'
                         last_bid_diff: '1'
                         created_at: '2021-11-25T21:24:59.000000Z'
@@ -795,7 +825,7 @@ paths:
                 type: object
                 example:
                   id: 1
-                  address: '0'
+                  address: dasdsa
                   win_bid: '11'
                   last_bid_diff: '1'
                   created_at: '2021-11-25T21:24:59.000000Z'
@@ -806,7 +836,7 @@ paths:
                     example: 1
                   address:
                     type: string
-                    example: '0'
+                    example: dasdsa
                   win_bid:
                     type: string
                     example: '11'
@@ -871,7 +901,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the property.'
-        example: 3
+        example: 11
         required: true
         schema:
           type: integer

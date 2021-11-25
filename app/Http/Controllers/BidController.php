@@ -29,6 +29,7 @@ class BidController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @bodyParam status integer The status of the property. Example: 0
      * @bodyParam property_id integer the id of the property. Example: 1
+     * @bodyParam user_id integer the id of the user. Example: 1
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
@@ -61,6 +62,7 @@ class BidController extends Controller
      * @param  \App\Models\Bid  $bid
      * @bodyParam status integer The status of the property. Example: 0
      * @bodyParam property_id integer the id of the property. Example: 1
+     * @bodyParam user_id integer the id of the user. Example: 1
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, Bid $bid)

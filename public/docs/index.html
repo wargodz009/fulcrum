@@ -340,12 +340,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://fulcrum.test/api/amount/16" \
+    --get "http://fulcrum.test/api/amount/10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://fulcrum.test/api/amount/16"
+    "http://fulcrum.test/api/amount/10"
 );
 
 const headers = {
@@ -430,7 +430,7 @@ access-control-allow-origin: *
                 <input type="number"
                name="id"
                data-endpoint="GETapi-amount--id-"
-               value="16"
+               value="10"
                data-component="url" hidden>
     <br>
 <p>The ID of the amount.</p>
@@ -449,7 +449,7 @@ access-control-allow-origin: *
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://fulcrum.test/api/amount/2" \
+    "http://fulcrum.test/api/amount/15" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -460,7 +460,7 @@ access-control-allow-origin: *
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://fulcrum.test/api/amount/2"
+    "http://fulcrum.test/api/amount/15"
 );
 
 const headers = {
@@ -532,7 +532,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-amount--id-"
-               value="2"
+               value="15"
                data-component="url" hidden>
     <br>
 <p>The ID of the amount.</p>
@@ -582,12 +582,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://fulcrum.test/api/amount/15" \
+    "http://fulcrum.test/api/amount/19" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://fulcrum.test/api/amount/15"
+    "http://fulcrum.test/api/amount/19"
 );
 
 const headers = {
@@ -648,7 +648,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="DELETEapi-amount--id-"
-               value="15"
+               value="19"
                data-component="url" hidden>
     <br>
 <p>The ID of the amount.</p>
@@ -711,10 +711,18 @@ access-control-allow-origin: *
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;property_id&quot;: 2,
+            &quot;property_id&quot;: 1,
             &quot;status&quot;: 1,
             &quot;created_at&quot;: &quot;2021-11-25T21:21:59.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2021-11-25T21:22:22.000000Z&quot;
+            &quot;updated_at&quot;: &quot;2021-11-25T21:22:22.000000Z&quot;,
+            &quot;amount&quot;: {
+                &quot;id&quot;: 1,
+                &quot;price&quot;: 100,
+                &quot;status&quot;: 0,
+                &quot;bid_id&quot;: 1,
+                &quot;created_at&quot;: &quot;2021-11-25T20:55:54.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2021-11-25T21:19:35.000000Z&quot;
+            }
         }
     ],
     &quot;first_page_url&quot;: &quot;http://fulcrum.test/api/bid?page=1&quot;,
@@ -911,12 +919,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://fulcrum.test/api/bid/8" \
+    --get "http://fulcrum.test/api/bid/15" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://fulcrum.test/api/bid/8"
+    "http://fulcrum.test/api/bid/15"
 );
 
 const headers = {
@@ -948,10 +956,18 @@ access-control-allow-origin: *
 
 <code class="language-json">{
     &quot;id&quot;: 1,
-    &quot;property_id&quot;: 2,
+    &quot;property_id&quot;: 1,
     &quot;status&quot;: 1,
     &quot;created_at&quot;: &quot;2021-11-25T21:21:59.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2021-11-25T21:22:22.000000Z&quot;
+    &quot;updated_at&quot;: &quot;2021-11-25T21:22:22.000000Z&quot;,
+    &quot;amount&quot;: {
+        &quot;id&quot;: 1,
+        &quot;price&quot;: 100,
+        &quot;status&quot;: 0,
+        &quot;bid_id&quot;: 1,
+        &quot;created_at&quot;: &quot;2021-11-25T20:55:54.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-11-25T21:19:35.000000Z&quot;
+    }
 }</code>
  </pre>
     </span>
@@ -1000,7 +1016,7 @@ access-control-allow-origin: *
                 <input type="number"
                name="id"
                data-endpoint="GETapi-bid--id-"
-               value="8"
+               value="15"
                data-component="url" hidden>
     <br>
 <p>The ID of the bid.</p>
@@ -1019,7 +1035,7 @@ access-control-allow-origin: *
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://fulcrum.test/api/bid/11" \
+    "http://fulcrum.test/api/bid/7" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1029,7 +1045,7 @@ access-control-allow-origin: *
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://fulcrum.test/api/bid/11"
+    "http://fulcrum.test/api/bid/7"
 );
 
 const headers = {
@@ -1100,7 +1116,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-bid--id-"
-               value="11"
+               value="7"
                data-component="url" hidden>
     <br>
 <p>The ID of the bid.</p>
@@ -1140,12 +1156,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://fulcrum.test/api/bid/7" \
+    "http://fulcrum.test/api/bid/18" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://fulcrum.test/api/bid/7"
+    "http://fulcrum.test/api/bid/18"
 );
 
 const headers = {
@@ -1206,7 +1222,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="DELETEapi-bid--id-"
-               value="7"
+               value="18"
                data-component="url" hidden>
     <br>
 <p>The ID of the bid.</p>
@@ -1269,7 +1285,7 @@ access-control-allow-origin: *
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;address&quot;: &quot;0&quot;,
+            &quot;address&quot;: &quot;dasdsa&quot;,
             &quot;win_bid&quot;: &quot;11&quot;,
             &quot;last_bid_diff&quot;: &quot;1&quot;,
             &quot;created_at&quot;: &quot;2021-11-25T21:24:59.000000Z&quot;,
@@ -1477,12 +1493,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://fulcrum.test/api/property/3" \
+    --get "http://fulcrum.test/api/property/11" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://fulcrum.test/api/property/3"
+    "http://fulcrum.test/api/property/11"
 );
 
 const headers = {
@@ -1514,7 +1530,7 @@ access-control-allow-origin: *
 
 <code class="language-json">{
     &quot;id&quot;: 1,
-    &quot;address&quot;: &quot;0&quot;,
+    &quot;address&quot;: &quot;dasdsa&quot;,
     &quot;win_bid&quot;: &quot;11&quot;,
     &quot;last_bid_diff&quot;: &quot;1&quot;,
     &quot;created_at&quot;: &quot;2021-11-25T21:24:59.000000Z&quot;,
@@ -1567,7 +1583,7 @@ access-control-allow-origin: *
                 <input type="number"
                name="id"
                data-endpoint="GETapi-property--id-"
-               value="3"
+               value="11"
                data-component="url" hidden>
     <br>
 <p>The ID of the property.</p>
@@ -1586,12 +1602,12 @@ access-control-allow-origin: *
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://fulcrum.test/api/property/7" \
+    "http://fulcrum.test/api/property/20" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://fulcrum.test/api/property/7"
+    "http://fulcrum.test/api/property/20"
 );
 
 const headers = {
@@ -1656,7 +1672,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-property--id-"
-               value="7"
+               value="20"
                data-component="url" hidden>
     <br>
 <p>The ID of the property.</p>
@@ -1675,12 +1691,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://fulcrum.test/api/property/17" \
+    "http://fulcrum.test/api/property/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://fulcrum.test/api/property/17"
+    "http://fulcrum.test/api/property/2"
 );
 
 const headers = {
@@ -1741,7 +1757,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="DELETEapi-property--id-"
-               value="17"
+               value="2"
                data-component="url" hidden>
     <br>
 <p>The ID of the property.</p>
@@ -2474,12 +2490,12 @@ access-control-allow-origin: *
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://fulcrum.test/api/user/1" \
+    "http://fulcrum.test/api/user/19" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://fulcrum.test/api/user/1"
+    "http://fulcrum.test/api/user/19"
 );
 
 const headers = {
@@ -2544,7 +2560,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-user--id-"
-               value="1"
+               value="19"
                data-component="url" hidden>
     <br>
 <p>The ID of the user.</p>
@@ -2563,12 +2579,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://fulcrum.test/api/user/20" \
+    "http://fulcrum.test/api/user/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://fulcrum.test/api/user/20"
+    "http://fulcrum.test/api/user/16"
 );
 
 const headers = {
@@ -2629,7 +2645,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="DELETEapi-user--id-"
-               value="20"
+               value="16"
                data-component="url" hidden>
     <br>
 <p>The ID of the user.</p>

@@ -79,7 +79,7 @@ endpoints:
         name: id
         description: 'The ID of the amount.'
         required: true
-        example: 16
+        example: 10
         type: integer
     queryParameters: []
     bodyParameters: []
@@ -112,7 +112,7 @@ endpoints:
         name: id
         description: 'The ID of the amount.'
         required: true
-        example: 2
+        example: 15
         type: integer
     queryParameters: []
     bodyParameters:
@@ -152,7 +152,7 @@ endpoints:
         name: id
         description: 'The ID of the amount.'
         required: true
-        example: 15
+        example: 19
         type: integer
     queryParameters: []
     bodyParameters: []

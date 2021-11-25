@@ -17,6 +17,7 @@ class CreateBidsTable extends Migration
             $table->id();
             $table->integer('property_id');
             $table->tinyInteger('status')->default(1); //0 inactive, 1 active, 2 = outbid, 3 = winning
+            $table->integer('user_id'); //0 inactive, 1 active, 2 = outbid, 3 = winning
             $table->timestamps();
         });
     }

@@ -20,7 +20,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"current_page":1,"data":[{"id":1,"address":"0","win_bid":"11","last_bid_diff":"1","created_at":"2021-11-25T21:24:59.000000Z","updated_at":"2021-11-25T21:24:59.000000Z"}],"first_page_url":"http:\/\/fulcrum.test\/api\/property?page=1","from":1,"last_page":1,"last_page_url":"http:\/\/fulcrum.test\/api\/property?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/fulcrum.test\/api\/property?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"http:\/\/fulcrum.test\/api\/property","per_page":1,"prev_page_url":null,"to":1,"total":1}'
+        content: '{"current_page":1,"data":[{"id":1,"address":"dasdsa","win_bid":"11","last_bid_diff":"1","created_at":"2021-11-25T21:24:59.000000Z","updated_at":"2021-11-25T21:24:59.000000Z"}],"first_page_url":"http:\/\/fulcrum.test\/api\/property?page=1","from":1,"last_page":1,"last_page_url":"http:\/\/fulcrum.test\/api\/property?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/fulcrum.test\/api\/property?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"http:\/\/fulcrum.test\/api\/property","per_page":1,"prev_page_url":null,"to":1,"total":1}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -79,14 +79,14 @@ endpoints:
         name: id
         description: 'The ID of the property.'
         required: true
-        example: 3
+        example: 11
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"id":1,"address":"0","win_bid":"11","last_bid_diff":"1","created_at":"2021-11-25T21:24:59.000000Z","updated_at":"2021-11-25T21:24:59.000000Z"}'
+        content: '{"id":1,"address":"dasdsa","win_bid":"11","last_bid_diff":"1","created_at":"2021-11-25T21:24:59.000000Z","updated_at":"2021-11-25T21:24:59.000000Z"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -112,7 +112,7 @@ endpoints:
         name: id
         description: 'The ID of the property.'
         required: true
-        example: 7
+        example: 20
         type: integer
     queryParameters: []
     bodyParameters: []
@@ -134,7 +134,7 @@ endpoints:
         name: id
         description: 'The ID of the property.'
         required: true
-        example: 17
+        example: 2
         type: integer
     queryParameters: []
     bodyParameters: []

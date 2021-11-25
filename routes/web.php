@@ -13,7 +13,10 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/test', function () {
+    $prop = \App\Models\Property::with('bids')->first();
+    dd($prop);
+});
 Route::get('/', function () {
     return Inertia::render('Home', ['test' => 'working']);
 });
