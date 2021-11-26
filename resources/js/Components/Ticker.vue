@@ -21,22 +21,22 @@
 				<ul>
 					<li class="title double arrow-up">14 Flood St.</li>
 					<li class="green">{{ticker.MyBidVsProperty.Winning}}</li>
-					<li class="gray">{{ticker.MyBid.Active}}</li>
+					<li class="gray">{{ticker.MyBid.ActivePrice}}</li>
 				</ul>
 				<ul>
 					<li class="title double arrow-down">24 Washington ave.</li>
 					<li class="red">{{ticker.MyBidVsProperty.Outbid}}</li>
-					<li class="gray">{{ticker.MyBid.Active}}</li>
+					<li class="gray">{{ticker.MyBid.ActivePrice}}</li>
 				</ul>
 				<ul>
 					<li class="title double arrow-middle">24 Washington ave.</li>
 					<li class="">{{ticker.MyBidVsProperty.Active}}</li>
-					<li class="gray">{{ticker.MyBid.Active}}</li>
+					<li class="gray">{{ticker.MyBid.ActivePrice}}</li>
 				</ul>
 				<ul>
 					<li class="title double arrow-up">57 West ave G.</li>
 					<li class="green">{{ticker.MyBidVsProperty.Current}}</li>
-					<li class="gray">{{ticker.MyBid.Active}}</li>
+					<li class="gray">{{ticker.MyBid.ActivePrice}}</li>
 				</ul>
 			</div>
 		</div>
