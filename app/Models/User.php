@@ -9,6 +9,7 @@ class User extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $with = ['bids'];
     public static $validationRules = [
         'name'   => 'required',
         'email'   => ['required','email'],

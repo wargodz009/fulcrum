@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class PropertyTicker extends JsonResource
@@ -14,11 +15,19 @@ class PropertyTicker extends JsonResource
      */
     public function toArray($request)
     {
+        $property_id = $this->id;
+        $user = User::first();
+        $active_bid = $user->bids()?->where('status',1)?->count();
+        $outbid_bid = $user->bids()?->where('status',2)?->count();
+        $winning_bid = $user->bids()?->where('status',3)?->count();
+
+
+
         return [
             'MyBid' => [
-                'Outbid'    => 12,
-                'Active'    => 12,
-                'Winning'    => 12,
+                'Outbid'    => $active_bid,
+                'Active'    => $outbid_bid,
+                'Winning'    => $winning_bid,
             ],
             'MyBidVsProperty' => [
                 'Winning'    => 1000,

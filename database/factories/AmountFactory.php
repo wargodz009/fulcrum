@@ -17,7 +17,7 @@ class AmountFactory extends Factory
         return [
             'price' => $this->faker->numberBetween(100,5000),
             'status' => $this->faker->numberBetween(0,3),
-            'bid_id' => Bid::all()->random()->id
+            'bid_id' => $this->faker->unique()->numberBetween(1, Bid::count())
         ];
     }
 }
