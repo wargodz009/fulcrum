@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Bid;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PropertyFactory extends Factory
@@ -16,8 +15,8 @@ class PropertyFactory extends Factory
     {
         return [
             'address' => $this->faker->address(),
-            'win_bid' => 0,
-            'last_bid_diff' => 0,
+            'win_bid' => $this->faker->numberBetween(20000,50000),
+            'last_bid_diff' => $this->faker->numberBetween(1000,5000),
         ];
     }
 }

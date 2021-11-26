@@ -27,4 +27,10 @@ class Property extends Model
     public function prev(){
         return $this->where('id', '<', $this->id)->orderBy('id','desc')->first();
     }
+    public function getWinBidAttribute($i) {
+        return to_money($i);
+    }
+    public function getLastBidDiffAttribute($i) {
+        return to_money($i);
+    }
 }

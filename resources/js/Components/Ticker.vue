@@ -1,5 +1,5 @@
 <template>
-	<div class="ticker">
+	<div class="ticker" v-if="ticker.MyBid != undefined">
 		<div class="end_set">
 			<div class="content">
 				<ul>
@@ -19,22 +19,22 @@
 		<div>
 			<div class="content-double">
 				<ul>
-					<li class="title double arrow-up">14 Flood St.</li>
+					<li class="title double arrow-up">{{ address }}</li>
 					<li class="green">{{ticker.MyBidVsProperty.Winning}}</li>
 					<li class="gray">{{ticker.MyBid.ActivePrice}}</li>
 				</ul>
 				<ul>
-					<li class="title double arrow-down">24 Washington ave.</li>
+					<li class="title double arrow-down">{{ address }}</li>
 					<li class="red">{{ticker.MyBidVsProperty.Outbid}}</li>
 					<li class="gray">{{ticker.MyBid.ActivePrice}}</li>
 				</ul>
 				<ul>
-					<li class="title double arrow-middle">24 Washington ave.</li>
+					<li class="title double arrow-middle">{{ address }}</li>
 					<li class="">{{ticker.MyBidVsProperty.Active}}</li>
 					<li class="gray">{{ticker.MyBid.ActivePrice}}</li>
 				</ul>
 				<ul>
-					<li class="title double arrow-up">57 West ave G.</li>
+					<li class="title double arrow-up">{{ address }}</li>
 					<li class="green">{{ticker.MyBidVsProperty.Current}}</li>
 					<li class="gray">{{ticker.MyBid.ActivePrice}}</li>
 				</ul>
@@ -65,7 +65,8 @@ import {onBeforeMount, ref} from "vue";
 export default {
 	props: {
 		property_id: Number,
-		user_id: Number
+		user_id: Number,
+		address: String
 	},
 	setup(props) {
 		const ticker = ref([])
@@ -79,10 +80,12 @@ export default {
 				tickerData()
 			}, 1000)
 		})
+
 		return {
 			ticker,
 			tickerData
 		}
+
 	}
 };
 </script>

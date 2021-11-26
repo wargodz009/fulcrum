@@ -2,7 +2,7 @@
 	<NavBar :address="loc.address"
 					:win_bid="loc.win_bid"
 					:last_bid_diff="loc.last_bid_diff"></NavBar>
-	<Ticker :property_id="loc.id" v-bind:user_id=1></Ticker>
+	<Ticker :property_id="loc.id" :user_id=1 :address="loc.address[0]"></Ticker>
 	<SaleSign :address="loc.address"
 						:win_bid="loc.win_bid"
 						:last_bid_diff="loc.last_bid_diff"></SaleSign>

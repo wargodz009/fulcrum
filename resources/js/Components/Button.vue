@@ -1,9 +1,10 @@
 <template>
-	<div class="button">
-		<div :class=position>
-			<a :href=link></a>
+	<a :href=link>
+		<div class="button">
+			<div :class=position>
+			</div>
 		</div>
-	</div>
+	</a>
 </template>
 
 <script>

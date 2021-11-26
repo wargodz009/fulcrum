@@ -16,9 +16,9 @@ class BidFactory extends Factory
     public function definition()
     {
         return [
-            'property_id' => Property::all()->random()->id,
+            'property_id' => $this->faker->numberBetween(1, Property::count()),
             'status' => $this->faker->numberBetween(0,3),
-            'user_id' => User::all()->random()->id
+            'user_id' => $this->faker->numberBetween(1, User::count())
         ];
     }
 }
