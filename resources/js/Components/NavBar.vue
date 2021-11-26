@@ -7,8 +7,8 @@
 				</li>
 				<li>
 					<span>Own</span>
-					<span class="bigger">14 Flood St.</span>
-					<span>New Orleans, LA 7022</span>
+					<span class="bigger">{{ address[0] }}</span>
+					<span>{{ address[1] }}</span>
 					<span><img src="/images/bundle.png" alt=""></span>
 				</li>
 				<li>
@@ -23,8 +23,8 @@
 					<span><img src="/images/bookmark.png" alt=""></span>
 				</li>
 				<li>
-					<span>Market Value $40,000</span>
-					<span class="bigger">$5,000</span>
+					<span>Market Value {{ win_bid }}</span>
+					<span class="bigger">{{ last_bid_diff }}</span>
 					<span>Reserve Price</span>
 				</li>
 				<li>
@@ -36,8 +36,19 @@
 </template>
 
 <script>
+
 export default {
-	props: ["test"],
+	props: {
+		address: Array,
+		win_bid: {
+			type: String,
+			default: '$40,000'
+		},
+		last_bid_diff: {
+			type: String,
+			default: '$5,000'
+		},
+	},
 };
 </script>
 

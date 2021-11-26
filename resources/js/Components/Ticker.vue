@@ -4,15 +4,15 @@
 			<div class="content">
 				<ul>
 					<li class="title">Outbid</li>
-					<li class="red">12</li>
+					<li class="red">{{ticker.MyBid.Outbid}}</li>
 				</ul>
 				<ul>
 					<li class="title">Active</li>
-					<li class="gray">24</li>
+					<li class="gray">{{ticker.MyBid.Active}}</li>
 				</ul>
 				<ul>
 					<li class="title">Winning</li>
-					<li class="green">12</li>
+					<li class="green">{{ticker.MyBid.Winning}}</li>
 				</ul>
 			</div>
 		</div>
@@ -20,23 +20,23 @@
 			<div class="content-double">
 				<ul>
 					<li class="title double arrow-up">14 Flood St.</li>
-					<li class="green">+1000</li>
-					<li class="gray">$5,000</li>
+					<li class="green">{{ticker.MyBidVsProperty.Winning}}</li>
+					<li class="gray">{{ticker.MyBid.Active}}</li>
 				</ul>
 				<ul>
 					<li class="title double arrow-down">24 Washington ave.</li>
-					<li class="red">-1000</li>
-					<li class="gray">$5,200</li>
+					<li class="red">{{ticker.MyBidVsProperty.Outbid}}</li>
+					<li class="gray">{{ticker.MyBid.Active}}</li>
 				</ul>
 				<ul>
 					<li class="title double arrow-middle">24 Washington ave.</li>
-					<li class="">$</li>
-					<li class="gray">$5,000</li>
+					<li class="">{{ticker.MyBidVsProperty.Active}}</li>
+					<li class="gray">{{ticker.MyBid.Active}}</li>
 				</ul>
 				<ul>
 					<li class="title double arrow-up">57 West ave G.</li>
-					<li class="green">$</li>
-					<li class="gray">$5,200</li>
+					<li class="green">{{ticker.MyBidVsProperty.Current}}</li>
+					<li class="gray">{{ticker.MyBid.Active}}</li>
 				</ul>
 			</div>
 		</div>
@@ -44,15 +44,15 @@
 			<div class="content">
 				<ul>
 					<li class="title">Winning</li>
-					<li class="green">$100,000</li>
+					<li class="green">{{ticker.PropertyBid.Winning}}</li>
 				</ul>
 				<ul>
 					<li class="title">Active</li>
-					<li class="gray">$100,000</li>
+					<li class="gray">{{ticker.PropertyBid.Active}}</li>
 				</ul>
 				<ul>
 					<li class="title">Outbid</li>
-					<li class="red">$100,000</li>
+					<li class="red">{{ticker.PropertyBid.Outbid}}</li>
 				</ul>
 			</div>
 		</div>
@@ -60,8 +60,30 @@
 </template>
 
 <script>
+import {onBeforeMount, ref} from "vue";
+
 export default {
-	props: ["test"],
+	props: {
+		property_id: Number,
+		user_id: Number
+	},
+	setup(props) {
+		const ticker = ref([])
+		const tickerData = async () => {
+			const response = await fetch(`/api/property/${props.property_id}`);
+			const data = await response.json();
+			ticker.value = data;
+		}
+		onBeforeMount(()=> {
+			setInterval(() => {
+				tickerData()
+			}, 1000)
+		})
+		return {
+			ticker,
+			tickerData
+		}
+	}
 };
 </script>
 

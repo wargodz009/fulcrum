@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Property;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -13,13 +14,14 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test', function () {
-    $prop = \App\Models\Property::with('bids')->first();
-    dd($prop);
-});
+
 Route::get('/', function () {
     return Inertia::render('Home', ['test' => 'working']);
 });
-Route::get('/property/{id}', function () {
-    return Inertia::render('Property', ['test' => 'working']);
+Route::get('/property/{property}', function (Property $property) {
+    return Inertia::render('Property', [
+        'loc' => $property,
+        'next' => '/property/'.(!empty($property->next()?->id)?$property->next()->id:Property::first()->id),
+        'prev' => '/property/'.(!empty($property->prev()?->id)?$property->prev()->id:Property::first()->id),
+    ]);
 });

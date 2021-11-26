@@ -1,7 +1,7 @@
 <template>
-	<div>
-		<h1>Inertiajs is {{ test }}</h1>
-	</div>
+	<ul>
+		<li>go /property/{id} path</li>
+	</ul>
 </template>
 
 <script>

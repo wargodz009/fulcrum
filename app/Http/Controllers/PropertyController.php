@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PropertyTicker;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -53,7 +54,7 @@ class PropertyController extends Controller
      */
     public function show(Property $property)
     {
-        return response()->json($property);
+        return response()->json(PropertyTicker::make($property));
     }
 
     /**

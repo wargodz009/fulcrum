@@ -10,14 +10,14 @@
 			<div class="div4">
 				<div class="content">
 					<div class="market">
-						<p>Market Value $40,000</p>
+						<p>Market Value {{ win_bid }}</p>
 					</div>
 					<div class="address">
-						<p>14 Flood St</p>
-						<p class="address-small">New Orleans, LA 70122</p>
+						<p>{{  address[0] }}</p>
+						<p class="address-small">{{  address[1] }}</p>
 					</div>
 					<div class="bid">
-						<p>Reserve Bid $5,000</p>
+						<p>Reserve Bid {{last_bid_diff }}</p>
 					</div>
 				</div>
 			</div>
@@ -27,7 +27,17 @@
 
 <script>
 export default {
-	props: ["test"],
+	props: {
+		address: Array,
+		win_bid: {
+			type: String,
+			default: '$40,000'
+		},
+		last_bid_diff: {
+			type: String,
+			default: '$5,000'
+		},
+	},
 };
 </script>
 

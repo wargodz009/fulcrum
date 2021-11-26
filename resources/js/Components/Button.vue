@@ -1,6 +1,7 @@
 <template>
 	<div class="button">
 		<div :class=position>
+			<a :href=link></a>
 		</div>
 	</div>
 </template>

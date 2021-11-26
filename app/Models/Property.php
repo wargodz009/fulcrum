@@ -18,4 +18,13 @@ class Property extends Model
     public function bids() {
         return $this->hasMany(Bid::class)->with('user');
     }
+    public function getAddressAttribute($address) {
+        return explode(PHP_EOL,$address);
+    }
+    public function next(){
+        return $this->where('id', '>', $this->id)->orderBy('id','asc')->first();
+    }
+    public function prev(){
+        return $this->where('id', '<', $this->id)->orderBy('id','desc')->first();
+    }
 }
