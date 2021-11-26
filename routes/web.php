@@ -16,7 +16,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Home', ['test' => 'working']);
+    return redirect('property/1');
 });
 Route::get('/property/{property}', function (Property $property) {
     return Inertia::render('Property', [

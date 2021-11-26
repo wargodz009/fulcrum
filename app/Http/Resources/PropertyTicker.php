@@ -51,7 +51,7 @@ class PropertyTicker extends JsonResource
                 'Winning'    => to_money($property_winning),
                 'Outbid'    => '-'.to_money(($property_winning - $property_outbid)),
                 'Active'    => Bid::select('id')->where('property_id',$property_id)->where('status',Bid::$STATUS_ACTIVE)->count(),
-                'Current'    => to_money(Bid::select('id')->where('property_id',$property_id)->where('status',Bid::$STATUS_ACTIVE)->first()->amount->price),
+                'Current'    => to_money(Bid::select('id')->where('property_id',$property_id)->orderBy('id','desc')->first()->amount->price),
             ],
             'PropertyBid' => [
                 'Outbid'    => to_money($property_outbid),
