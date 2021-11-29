@@ -19,9 +19,9 @@ class PropertyTicker extends JsonResource
     {
         $property_id = $this->id;
         $user = User::first();
-        $active_bid = $user->bids()?->where('status',Bid::$STATUS_ACTIVE);
-        $outbid_bid = $user->bids()?->where('status',Bid::$STATUS_OUTBID)?->count();
-        $winning_bid = $user->bids()?->where('status',Bid::$STATUS_WINNING)?->count();
+        $active_bid = $user->bids()->where('status',Bid::$STATUS_ACTIVE);
+        $outbid_bid = $user->bids()->where('status',Bid::$STATUS_OUTBID)->count();
+        $winning_bid = $user->bids()->where('status',Bid::$STATUS_WINNING)->count();
 
         $property_winning = Amount::whereIn('bid_id',
             Bid::select('id')
