@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('/property/{property}', function (Property $property) {
     return Inertia::render('Property', [
         'loc' => $property,
-        'next' => '/property/'.(!empty($property->next()?->id)?$property->next()->id:Property::first()->id),
-        'prev' => '/property/'.(!empty($property->prev()?->id)?$property->prev()->id:Property::first()->id),
+        'next' => '/property/'.(!empty($property->next()->id)?$property->next()->id:Property::first()->id),
+        'prev' => '/property/'.(!empty($property->prev()->id)?$property->prev()->id:Property::first()->id),
     ]);
 });
